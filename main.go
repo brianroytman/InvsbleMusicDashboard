@@ -14,6 +14,7 @@ import (
 	"github.com/gorilla/mux"
 )
 
+
 type SingleJSON struct {
 	PartnerName string `json:"PartnerName,omitempty"`
 	ReleaseDate string `json:"ReleaseDate,omitempty"`
@@ -22,17 +23,97 @@ type SingleJSON struct {
 	Genre       string `json:"Genre, omitempty"`
 }
 
+
 type NewReleaseMessage struct {
-	PartnerName string `xml:"PartnerName"`
-	ReleaseDate string `xml:"ReleaseDate"`
-	SongTitle   string `xml:"SongTitle"`
-	ArtistName  string `xml:"ArtistName"`
-	Genre       string `xml:"Genre`
+    MessageId                           string `xml:"MessageHeader>MessageId"`
+    SenderPartyId                       string `xml:"MessageHeader>MessageSender>PartyId"`
+	PartnerName                         string `xml:"MessageHeader>MessageSender>PartnerName"`
+    FullName                            string `xml:"MessageHeader>MessageSender>PartyName>FullName"`
+    RecipeintPartyId                    string `xml:"MessageHeader>MessageRecipient>PartyId"`
+    MessageCreatedDateTime              string `xml:"MessageHeader>MessageCreatedDateTime"`
+    MessageControlType                  string `xml:"MessageHeader>MessageControlType"`
+    /*
+	ReleaseDate                         string `xml:"MessageHeader>MessageDetails>ReleaseDate"`
+	SongTitle                           string `xml:"MessageHeader>MessageDetails>SongTitle"`
+	ArtistName                          string `xml:"MessageHeader>MessageDetails>ArtistName"`
+	*/
+	UpdateIndicator                     string `xml:"UpdateIndicator"`
+	SoundRecordingType                  string `xml:"ResourceList>SoundRecording>SoundRecordingType"`
+
+    SoundRecordingId   struct {
+    				Text          string `xml:",chardata"`
+    				ISRC          string `xml:"ISRC"`
+    				ProprietaryId []struct {
+    					Text      string `xml:",chardata"`
+    					Namespace string `xml:"Namespace,attr"`
+    				} `xml:"ProprietaryId"`
+    			} `xml:"ResourceList>SoundRecording>SoundRecordingId"`
+
+
+    ResourceReference                   string `xml:"ResourceList>SoundRecording>ResourceReference"`
+    ReferenceTitle    struct {
+    				Text                  string `xml:",chardata"`
+    				LanguageAndScriptCode string `xml:"LanguageAndScriptCode,attr"`
+    				TitleText             string `xml:"TitleText"`
+    			} `xml:"ResourceList>SoundRecording>ReferenceTitle"`
+
+    Duration                            string `xml:"ResourceList>SoundRecording>Duration"`
+    TerritoryCode                       string `xml:"ResourceList>SoundRecording>SoundRecordingDetailsByTerritory>TerritoryCode"`
+    Title         struct {
+    					Text      string `xml:",chardata"`
+    					TitleType string `xml:"TitleType,attr"`
+    					TitleText string `xml:"TitleText"`
+    				} `xml:"ResourceList>SoundRecording>SoundRecordingDetailsByTerritory>Title"`
+    //TitleText                           string `xml:"ResourceList>SoundRecording>SoundRecordingDetailsByTerritory>Title" TitleType='DisplayTitle'">TitleText"`
+    DisplayArtistFullName               string `xml:"ResourceList>SoundRecording>SoundRecordingDetailsByTerritory>DisplayArtist>PartyName>FullName"`
+    ArtistRole                          string `xml:"ResourceList>SoundRecording>SoundRecordingDetailsByTerritory>DisplayArtist>ArtistRole"`
+    LabelName                           string `xml:"ResourceList>SoundRecording>SoundRecordingDetailsByTerritory>LabelName"`
+    RightsControllerFullName            string `xml:"ResourceList>SoundRecording>SoundRecordingDetailsByTerritory>RightsController>PartyName>FullName"`
+    RightsControllerPartyId             string `xml:"ResourceList>SoundRecording>SoundRecordingDetailsByTerritory>RightsController>PartyId"`
+    RightsControllerRole                string `xml:"ResourceList>SoundRecording>SoundRecordingDetailsByTerritory>RightsController>RightsControllerRole"`
+    RightSharePercentage                string `xml:"ResourceList>SoundRecording>SoundRecordingDetailsByTerritory>RightsController>RightSharePercentage"`
+    PLineYear                           string `xml:"ResourceList>SoundRecording>SoundRecordingDetailsByTerritory>PLine>Year"`
+    PLineText                           string `xml:"ResourceList>SoundRecording>SoundRecordingDetailsByTerritory>PLine>PLineText"`
+	Genre                               string `xml:"ResourceList>SoundRecording>SoundRecordingDetailsByTerritory>Genre>GenreText"`
+	ParentalExplicitWarning             string `xml:"ResourceList>SoundRecording>SoundRecordingDetailsByTerritory>ParentalWarningType"`
+	TechnicalResourceDetailsReference   string `xml:"ResourceList>SoundRecording>SoundRecordingDetailsByTerritory>TechnicalSoundRecordingDetails>TechnicalSoundRecordingDetailsReference"`
+	ReleaseList                         string `xml:"ReleaseList"`
+    DealList                            string `xml:"DealList"`
 }
+
+
+/*
+type NewReleaseMessage struct {
+    MessageId               string          `xml:"MessageHeader>MessageId"`
+    SenderPartyId           string          `xml:"MessageHeader>MessageSender>PartyId"`
+    FullName                string          `xml:"MessageHeader>MessageSender>PartyName>FullName"`
+    RecipeintPartyId        string          `xml:"MessageHeader>MessageRecipient>PartyId"`
+    MessageCreatedDateTime  string          `xml:"MessageHeader>MessageCreatedDateTime"`
+
+    PartnerName             string          `xml:"MessageHeader>MessageDetails>PartnerName"`
+    ReleaseDate             string          `xml:"MessageHeader>MessageDetails>ReleaseDate"`
+    SongTitle               string          `xml:"MessageHeader>MessageDetails>SongTitle"`
+    ArtistName              string          `xml:"MessageHeader>MessageDetails>ArtistName"`
+
+    UpdateIndicator         string          `xml:"UpdateIndicator"`
+    SoundRecordingType      string          `xml:"ResourceList>SoundRecording>SoundRecordingType"`
+    ISRC                    string          `xml:"ResourceList>SoundRecording>SoundRecordingId>ISRC"`
+    ResourceReference       string          `xml:"ResourceList>SoundRecording>ResourceReference"`
+    ReferenceTitleText      string          `xml:"ResourceList>SoundRecording>ReferenceTitle LanguageAndScriptCode='en'>TitleText"`
+    Duration                string          `xml:"ResourceList>SoundRecording>Duration"`
+    TerritoryCode           string          `xml:"ResourceList>SoundRecording>SoundRecordingDetailsByTerritory>TerritoryCode"`
+    TitleText               string          `xml:"ResourceList>SoundRecording>SoundRecordingDetailsByTerritory>Title TitleType='DisplayTitle'>TitleText"`
+    DisplayArtistFullName   string          `xml:"ResourceList>SoundRecording>SoundRecordingDetailsByTerritory>DisplayArtist>PartyName>FullName"`
+    LabelName               string          `xml:"ResourceList>SoundRecording>SoundRecordingDetailsByTerritory>LabelName"`
+    Genre                   string          `xml:"ResourceList>SoundRecording>Genre"`
+    ReleaseList             string          `xml:"ReleaseList"`
+    DealList                string          `xml:"DealList"`
+}
+*/
 
 type SinglesJSON []SingleJSON
 
-type SinglesXML []NewReleaseMessage
+//type SinglesXML []NewReleaseMessage
 
 func LiveDownloadReleaseContent(w http.ResponseWriter, r *http.Request) {
 	fmt.Println("GET Endpoint Hit: Download Single Release Content")
@@ -40,7 +121,6 @@ func LiveDownloadReleaseContent(w http.ResponseWriter, r *http.Request) {
 
 	w.Header().Set("Content-Type", "application/octet-stream")
 	w.Header().Set("Content-Disposition", "attachment; filename="+fileName)
-	//w.Header().Set("Content-Disposition", "attachment; filename=download_single_release_output.xml")
 	w.Header().Set("Content-Transfer-Encoding", "binary")
 	w.Header().Set("Expires", "0")
 	/*
@@ -78,6 +158,7 @@ func LiveUploadReleaseContent(w http.ResponseWriter, r *http.Request) {
 	log.Println(string(sJ.SongTitle))
 
 	var sX NewReleaseMessage
+	//result := &Results{}
 	json.Unmarshal(body, &sX)
 	xmlOut, _ := xml.MarshalIndent(sX, "", "\t")
 	modtime := time.Now()
@@ -87,22 +168,12 @@ func LiveUploadReleaseContent(w http.ResponseWriter, r *http.Request) {
 
 	_ = ioutil.WriteFile(fileName, xmlOut, 0644)
 
-	//var xmlReader, err := ioutil.ReadFile(fileName)
 	if err != nil {
 		log.Fatal(err)
 	}
-	/*
-		//w.Header().Add("Content-Disposition", "Attachment")
-		//w.Header().Set("Content-Disposition", "attachment; filename=300_Entertainment_Output.xml")
-		//w.Header().Set("Content-Type", r.Header.Get("Content-Type"))
-		w.Header().Set("Content-Disposition", "attachment; filename=300_Entertainment_Output.xml")
-		w.Header().Set("Content-Type", r.Header.Get("Content-Type"))
-		w.Header().Set("Content-Length", r.Header.Get("Content-Length"))
-	*/
 
 	w.Header().Set("Content-Type", "application/octet-stream")
 	w.Header().Set("Content-Disposition", "attachment; filename="+fileName)
-	//w.Header().Set("Content-Disposition", "attachment; filename=download_single_release_output.xml")
 	w.Header().Set("Content-Transfer-Encoding", "binary")
 	w.Header().Set("Expires", "0")
 
