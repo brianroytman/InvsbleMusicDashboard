@@ -32,17 +32,17 @@ type NewReleaseMessage struct {
     RecipeintPartyId                    string `xml:"MessageHeader>MessageRecipient>PartyId"`
     MessageCreatedDateTime              string `xml:"MessageHeader>MessageCreatedDateTime"`
     MessageControlType                  string `xml:"MessageHeader>MessageControlType"`
-    /*
+
 	ReleaseDate                         string `xml:"MessageHeader>MessageDetails>ReleaseDate"`
 	SongTitle                           string `xml:"MessageHeader>MessageDetails>SongTitle"`
 	ArtistName                          string `xml:"MessageHeader>MessageDetails>ArtistName"`
-	*/
+
 	UpdateIndicator                     string `xml:"UpdateIndicator"`
 	SoundRecordingType                  string `xml:"ResourceList>SoundRecording>SoundRecordingType"`
 
     SoundRecordingId   struct {
     				Text          string `xml:",chardata"`
-    				ISRC          string `xml:"ISRC"`
+    				Isrc          string `xml:"ISRC"`
     				ProprietaryId []struct {
     					Text      string `xml:",chardata"`
     					Namespace string `xml:"Namespace,attr"`
@@ -77,7 +77,7 @@ type NewReleaseMessage struct {
 	Genre                               string `xml:"ResourceList>SoundRecording>SoundRecordingDetailsByTerritory>Genre>GenreText"`
 	ParentalExplicitWarning             string `xml:"ResourceList>SoundRecording>SoundRecordingDetailsByTerritory>ParentalWarningType"`
 	TechnicalResourceDetailsReference   string `xml:"ResourceList>SoundRecording>SoundRecordingDetailsByTerritory>TechnicalSoundRecordingDetails>TechnicalSoundRecordingDetailsReference"`
-	ReleaseList                         string `xml:"ReleaseList"`
+	Isrc                                string `xml:"ReleaseList>Release>ReleaseId>ISRC"`
     DealList                            string `xml:"DealList"`
 }
 
@@ -158,7 +158,6 @@ func LiveUploadReleaseContent(w http.ResponseWriter, r *http.Request) {
 	log.Println(string(sJ.SongTitle))
 
 	var sX NewReleaseMessage
-	//result := &Results{}
 	json.Unmarshal(body, &sX)
 	xmlOut, _ := xml.MarshalIndent(sX, "", "\t")
 	modtime := time.Now()
