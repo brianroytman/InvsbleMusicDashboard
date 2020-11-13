@@ -21,7 +21,5 @@ handlers:
 - url: /downloadLive
   script: auto
 
-
-
-
-
+- url: /createClaimsEvent
+  script: auto

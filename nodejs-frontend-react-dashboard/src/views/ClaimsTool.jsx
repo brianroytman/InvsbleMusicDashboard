@@ -48,6 +48,7 @@ import { saveAs } from 'file-saver';
 import FileSaver from 'file-saver';
 
 
+
 class ClaimsTool extends Component {
   constructor(props) {
     super(props);
@@ -97,13 +98,14 @@ class ClaimsTool extends Component {
 
   handleFormSubmit(e) {
     e.preventDefault();
-    let releaseData = this.state.ClaimDetails;
+    let claimData = this.state.ClaimDetails;
 
-    //create API endpoint "claimLive" on the Go side to POST to
-    fetch("/claimLive", {
+    //create API endpoint "createClaimsEvent" on the Go side to POST to
+
+    fetch("/createClaimsEvent", {
       method: "POST",
       //mode: "no-cors",
-      body: JSON.stringify(releaseData),
+      body: JSON.stringify(claimData),
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json"
@@ -113,6 +115,7 @@ class ClaimsTool extends Component {
     }).then(function(blob) {
           FileSaver.saveAs(blob, 'claim_details_300.xml');
     });
+
   }
 
   handleClearForm(e) {
