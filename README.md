@@ -1,4 +1,4 @@
-# InvsbleMusic_Dashboard
+# InvsbleMusicDashboard
 
 Web application developed for Invsble Music - an artist management and music consulting services company. The dashboard provides tools to automate:
 
