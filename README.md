@@ -1,3 +1,11 @@
 # InvsbleMusic_Dashboard
 
-Dashboard web application for Invsble Music - an artist management and music consulting services company. The dashboard provides tools for automating artist metadata submissions to digital streaming providers for upcoming single and ep/album releases, generating copyright takedown claims, internal scheduling, and measuring artist asset performance (e.g. YouTube videos) across various social media platforms and digital streaming providers. Currently in use by A&R and Operations employees at 300 Entertainment (Warner Music Group).
+Web application developed for Invsble Music - an artist management and music consulting services company. The dashboard provides tools to automate:
+
+1) artist metadata XMLs to submit to digital streaming providers regarding upcoming single and ep/album releases (live with YouTube)
+2) generating copyright takedown claims
+3) internal scheduling for artist releases and claims on a shared calendar
+4) measuring artist asset performance (e.g. YouTube videos) across various social media platforms and digital streaming providers. 
+
+
+Currently in use with Operations employees at 300 Entertainment (Warner Music Group) to support artist metadata submission workflow.
