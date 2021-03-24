@@ -1,0 +1,76 @@
+<NewReleaseMessage>
+	<MessageHeader>
+		<MessageId></MessageId>
+		<MessageSender>
+			<PartyId></PartyId>
+			<PartnerName>300 Entertainment</PartnerName>
+			<PartyName>
+				<FullName></FullName>
+			</PartyName>
+		</MessageSender>
+		<MessageRecipient>
+			<PartyId></PartyId>
+		</MessageRecipient>
+		<MessageCreatedDateTime></MessageCreatedDateTime>
+		<MessageControlType></MessageControlType>
+		<MessageDetails>
+			<ReleaseDate>2020-09-30</ReleaseDate>
+			<SongTitle>New Song</SongTitle>
+			<ArtistName>Royt</ArtistName>
+		</MessageDetails>
+	</MessageHeader>
+	<UpdateIndicator></UpdateIndicator>
+	<ResourceList>
+		<SoundRecording>
+			<SoundRecordingType></SoundRecordingType>
+			<SoundRecordingId>
+				<ISRC></ISRC>
+			</SoundRecordingId>
+			<ResourceReference></ResourceReference>
+			<ReferenceTitle LanguageAndScriptCode="">
+				<TitleText></TitleText>
+			</ReferenceTitle>
+			<Duration></Duration>
+			<SoundRecordingDetailsByTerritory>
+				<TerritoryCode></TerritoryCode>
+				<Title TitleType="">
+					<TitleText></TitleText>
+				</Title>
+				<DisplayArtist>
+					<PartyName>
+						<FullName></FullName>
+					</PartyName>
+					<ArtistRole></ArtistRole>
+				</DisplayArtist>
+				<LabelName></LabelName>
+				<RightsController>
+					<PartyName>
+						<FullName></FullName>
+					</PartyName>
+					<PartyId></PartyId>
+					<RightsControllerRole></RightsControllerRole>
+					<RightSharePercentage></RightSharePercentage>
+				</RightsController>
+				<PLine>
+					<Year></Year>
+					<PLineText></PLineText>
+				</PLine>
+				<Genre>
+					<GenreText>Pop</GenreText>
+				</Genre>
+				<ParentalWarningType></ParentalWarningType>
+				<TechnicalSoundRecordingDetails>
+					<TechnicalSoundRecordingDetailsReference></TechnicalSoundRecordingDetailsReference>
+				</TechnicalSoundRecordingDetails>
+			</SoundRecordingDetailsByTerritory>
+		</SoundRecording>
+	</ResourceList>
+	<ReleaseList>
+		<Release>
+			<ReleaseId>
+				<ISRC>12345654321QRS</ISRC>
+			</ReleaseId>
+		</Release>
+	</ReleaseList>
+	<DealList></DealList>
+</NewReleaseMessage>
