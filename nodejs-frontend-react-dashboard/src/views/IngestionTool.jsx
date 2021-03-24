@@ -49,359 +49,17 @@ import FileSaver from 'file-saver';
 class IngestionTool extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
         MessageDetails: {
-          LanguageAndScriptCode: "en",
-          MessageSchemaVersionId: "ern/382",
-          Ern: "http://ddex.net/xml/ern/382",
-          SchemaLocation: "http://ddex.net/xml/ern/382 http://ddex.net/xml/ern/382/release-notification.xsd",
-          MessageHeader: {
-            PartnerName: "",
-            ParentalWarningType: "",
-            ReleaseType: "",
-            ReleaseTitleText: "",
-            TitleTextArtistName: "",
-            Genre: "",
-            Isrc: "",
-            MessageCreatedDateTime: Date().toLocaleString(),
-            MessageSender: {
-              PartyName: {
-                FullName: "THREEHUNDRED",
-              },
-              PartyId: "PADPIDA2014082004R",
-            },
-            MessageControlType: "LiveMessage",
-            MessageRecipient: {
-              PartyName: {
-                FullName: "Youtube",
-              },
-              PartyId: "PADPIDA2014082004R",
-            },
-            MessageId: "123456QWERTY",
-          },
-          UpdateIndicator: "OriginalMessage",
-          ResourceList: {
-              SoundRecording: {
-                SoundRecordingType: "MusicalWorkSoundRecording",
-                SoundRecordingId: {
-                   Isrc: "QMCE32000050",
-                   ProprietaryId: [
-                      {
-                         Namespace: "YOUTUBE:AT_CUSTOM_ID",
-                         text: "THREEHUNDRED-181"
-                      },
-                      {
-                         Namespace: "YOUTUBE:SR_CUSTOM_ID",
-                         text: "THREEHUNDRED-181"
-                      },
-                      {
-                         Namespace: "DPID:PADPIDA2014040303H",
-                         text: "THREEHUNDRED"
-                      },
-                   ],
-                 },
-                 ResourceReference: "A1",
-                 ReferenceTitle: {
-                   TitleText: "Ramona Flowers",
-                   LanguageAndScriptCode: "en"
-                 },
-                 Duration: "PT00H01M42S",
-                 SoundRecordingDetailsByTerritory: {
-                   TerritoryCode: "Worldwide",
-                   Title: {
-                     TitleText: "Ramona Flowers",
-                     TitleType: "DisplayTitle",
-                   },
-                   DisplayArtist: {
-                     PartyName: {
-                       FullName: "Haroinfather",
-                     },
-                     ArtistRole: "MainArtist",
-                   },
-                   LabelName: "Crowned LLC 300 Entertainment",
-                   RightsController: {
-                     PartyName: {
-                       "FullName": "INDMUSIC"
-                     },
-                     PartyId: "PADPIDA2014040303H",
-                     RightsControllerRole: "RightsController",
-                     RightSharePercentage: "100.00"
-                   },
-                   PLine: {
-                     Year: "2020",
-                     PLineText: "Crowned LLC 300 Entertainment"
-                   },
-                   Genre: {
-                     GenreText: "Hip Hop"
-                   },
-                   ParentalWarningType: "Explicit",
-                   TechnicalSoundRecordingDetails: {
-                     TechnicalResourceDetailsReference: "T1",
-                     File:  {
-                       FileName: "Haroinfather - RAMONA FLOWERS (MAIN)_JL MASTER 2.wav",
-                       FilePath: "/",
-                       HashSum: {
-                         HashSum: "a01cbacff993beab6769f817cc46786b",
-                         HashSumAlgorithmType: "MD5"
-                       }
-                     }
-                   }
-                 }
-              },
-              Image: {
-                ImageType: "FrontCoverImage",
-                ImageId: {
-                  ProprietaryId: [
-                    {
-                      Namespace: "PADPIDA2014040303H",
-                      text: "THREEHUNDRED"
-                    }
-                  ]
-                },
-                ResourceReference: "A2",
-                ImageDetailsByTerritory: {
-                  TerritoryCode: "Worldwide",
-                  TechnicalImageDetails: {
-                    TechnicalResourceDetailsReference: "T2",
-                    ImageCodecType: "JPEG",
-                    ImageHeight: "2000",
-                    ImageWidth: "2000",
-                    File: {
-                      FileName: "haroinfather - ramona flowers ARTWORK v2.jpg",
-                      FilePath: "/",
-                      HashSum: {
-                        HashSum: "101448ba335e56f53be92d662d6f4b08",
-                        HashSumAlgorithmType: "MD5"
-                     }
-                   }
-                  }
-                }
-              }
-            },
-            ReleaseList: {
-              Release: [
-                {
-                  ReleaseId: {
-                    Icpn: "810043680172",
-                    ProprietaryId: [
-                      {
-                        Namespace: "PADPIDA2014040303H",
-                        Text: "THREEHUNDRED"
-                      }
-                    ],
-                  },
-                  ReleaseReference: "R0",
-                  ReferenceTitle: {
-                    TitleText: "Ramona Flowers",
-                    LanguageAndScriptCode: "en"
-                  },
-                  ReleaseResourceReferenceList: {
-                    ReleaseResourceReference: [
-                      {
-                        ReleaseResourceType: "PrimaryResource",
-                        Text: "A1"
-                      },
-                      {
-                        ReleaseResourceType: "SecondaryResource",
-                        Text: "A2"
-                      }
-                    ]
-                  },
-                  ReleaseType: "Album",
-                  ReleaseDetailsByTerritory: {
-                    TerritoryCode: "Worldwide",
-                    LabelName: "Crowned LLC 300 Entertainment",
-                    Title: [
-                      {
-                        TitleText: "Ramona Flowers",
-                        TitleType: "DisplayTitle"
-                      },
-                      {
-                        TitleText: "Ramona Flowers",
-                        LanguageAndScriptCode: "en",
-                        TitleType: "FormalTitle"
-                      }
-                   ],
-                  DisplayArtist: {
-                    PartyName: {
-                      FullName: "Haroinfather"
-                    },
-                    ArtistRole: "MainArtist",
-                  },
-                  ParentalWarningType: "Explicit",
-                  ResourceGroup: {
-                    ResourceGroup: {
-                      Title: [
-                        {
-                          TitleText: "Ramona Flowers",
-                          TitleType: "GroupingTitle"
-                        }
-                      ],
-                      SequenceNumber: "1",
-                      ResourceGroupContentItem: {
-                        SequenceNumber: "1",
-                        ResourceType: "SoundRecording",
-                        ReleaseResourceReference: [
-                          {
-                            ReleaseResourceType: "SecondaryResource",
-                            text: "A2"
-                          }
-                        ]
-                      }
-                    }
-                  },
-                  Genre: {
-                    GenreText: "Hip Hop"
-                  },
-                  OriginalReleaseDate: "2020-02-20"
-                },
-                PLine: {
-                  Year: "2020",
-                  PLineText: "Crownded LLC 300 Entertainment"
-                }
-              },
-              {
-                ReleaseId: {
-                  Isrc: "QMCE32000050",
-                  ProprietaryId: [
-                    {
-                      Namespace: "PADPIDA2014040303H",
-                      Text: "THREEHUNDRED"
-                    }
-                  ]
-                },
-                ReleaseReference: "R1",
-                ReferenceTitle: {
-                  TitleText: "Ramona Flowers",
-                  LanguageAndScriptCode: "en"
-                },
-                ReleaseResourceReferenceList: {
-                  ReleaseResourceReference: [
-                    {
-                      ReleaseResourceType: "PrimaryResource",
-                      Text: "A1"
-                    }
-                  ]
-                },
-                ReleaseType: "TrackRelease",
-                ReleaseDetailsByTerritory: {
-                  TerritoryCode: "Worldwide",
-                  LabelName: "Crowned LLC 300 Entertainment",
-                  Title: [
-                    {
-                      TitleText: "Ramona Flowers"
-                    }
-                  ],
-                  DisplayArtist: {
-                    PartyName: {
-                      FullName: "Haroinfather"
-                    },
-                    ArtistRole: "MainArtist"
-                  },
-                  ParentalWarningType: "Explicit",
-                  Genre: {
-                    GenreText: "Hip Hop"
-                  },
-                  OriginalReleaseDate: "2020-02-20"
-                },
-                PLine: {
-                  Year: "2020",
-                  PLineText: "Crowned LLC 300 Entertainment"
-                },
-                CLine: {
-                  Year: "2020",
-                  CLineText: "Crowned LLC 300 Entertainment"
-                }
-              }
-            ]
-          },
-          DealList: {
-            ReleaseDeal: {
-              DealReleaseReference: "R1",
-              Deal: {
-                DealReference: "YT_MATCH_POLICY:Monetize in all countries"
-              }
-            }
-          }
-        },
-        messageRecipientNameOptions: ["Youtube", "YouTube_ContentID"],
-        partnerOptions: ["300 Entertainment", "The Royt Sound"],
-        parentalWarningTypeOptions: ["Explicit", "Not Explicit"],
-        releaseTypeOptions: ["Album", "EP", "Single"],
-
-        /*
-        MessageDetails: {
-          messageId: "1-a",
-          messageCreatedDateTime: Date().toLocaleString(),
-          messageControlType: "",
-          senderPartyId: "",
-          isrc: "",
-          titleTextArtistName: "",
-          //duration: "",
-          fullName: "",
-          labelName: "",
-          pLineText: "",
-          pLineYear: "2020",
-          genre: "",
-          parentalWarningType: "",
-          release: {
-            releaseType: releaseType,
-          },
-          fileNameData: "",
-          fileNameImage: "",
-          icpn: "",
-          propertyIdTitleText: "",
-          resourceReleaseType: "",
-          resourceReference: "A1",
-          territoryCode: "",
-          releaseLabelName: "",
-          releaseTitleText: "",
-          releaseIsrc: "",
-          languageTitleText: "",
-          languageAndScriptCode: "en",
-          displayArtistName: "",
-          displayParentalWarningType: "",
-          originalReleaseDate: "",
+          partnerName: "",
+          releaseDate: "",
+          songTitle: "",
+          artistName: "",
+          genre:"",
+          isrc: ""
         },
         partnerOptions: ["300 Entertainment", "The Royt Sound"],
-        parentalWarningTypeOptions: ["Explicit", "Not Explicit"],
-        releaseTypeOptions: ["Album", "EP", "Single"],
-        territoryCodeOptions: ["Worldwide", "Other"],
-        */
-
-        /*
-        MessageDetails: {
-          messageId: "",
-          messageCreatedDateTime: "",
-          titleTextArtistName: "",
-          //duration: "",
-          fullName: "",
-          labelName: "",
-          year: "",
-          pLineText: "",
-          genre: "",
-          parentalWarningType: "",
-          releaseType: "",
-          fileNameData: "",
-          fileNameImage: "",
-          icpn: "",
-          propertyIdTitleText: "",
-          resourceReleaseType: "",
-          territoryCode: "",
-          releaseLabelName: "",
-          releaseTitleText: "",
-          languageTitleText: "",
-          displayArtistName: "",
-          displayParentalWarningType: "",
-          originalReleaseDate: "",
-        },
-        */
-
-        //partnerOptions: ["300 Entertainment", "The Royt Sound"],
-        //parentalWarningTypeOptions: ["Explicit", "Not Explicit"],
-        //releaseTypeOptions: ["Album", "EP", "Single"],
-        //territoryCodeOptions: ["Worldwide", "Other"],
-
     };
     this.handleReleaseDate = this.handleReleaseDate.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
@@ -415,7 +73,7 @@ class IngestionTool extends Component {
       prevState => ({
         MessageDetails: {
           ...prevState.MessageDetails,
-          originalReleaseDate: value
+          releaseDate: value
         }
       }),
       () => console.log(this.state.MessageDetails)
@@ -467,83 +125,18 @@ class IngestionTool extends Component {
   handleClearForm(e) {
     e.preventDefault();
     this.setState({
-      MessageDetails: {
-        PartnerName: "",
-        ParentalWarningType: "",
-        ReleaseType: "",
-        ReleaseTitleText: "",
-        TitleTextArtistName: "",
-        Genre: "",
-        Isrc: "",
-        MessageHeader: {
-          MessageCreatedDateTime: Date().toLocaleString(),
-        },
-        MessageSender: {
-          PartyName: {
-            FullName: "THREEHUNDRED",
-          },
-          PartyId: "PADPIDA2014082004R",
-        },
-        MessageControlType: "LiveMessage",
-        MessageRecipient: {
-          PartyName: {
-            FullName: "Youtube",
-          },
-          PartyId: "PADPIDA2014082004R",
-        },
-        MessageId: "123456QWERTY",
-      }
-
-      /*
-        MessageDetails: {
-          messageId: "1-a",
-          messageCreatedDateTime: Date().toLocaleString(),
-          messageControlType: "LiveMessage",
-          UpdateIndicator: "OriginalMessage",
-          senderPartyId: "PADPIDA2014082004R",
-          isrc: "",
-          titleTextArtistName: "",
-          //duration: "",
-          fullName: "",
-          labelName: "",
-          pLineText: "",
-          pLineYear: "",
-          genre: "",
-          parentalWarningType: "",
-          releaseType: "",
-          fileNameData: "",
-          fileNameImage: "",
-          icpn: "",
-          propertyIdTitleText: "",
-          resourceReleaseType: "",
-          resourceReference: "A1",
-          territoryCode: "",
-          releaseLabelName: "",
-          releaseIsrc: "",
-          releaseTitleText: "",
-          languageTitleText: "",
-          languageAndScriptCode: "",
-          displayArtistName: "",
-          displayParentalWarningType: "",
-          originalReleaseDate: "",
-        }
-        */
-        /*
         MessageDetails: {
           partnerName: "",
           releaseDate: "",
           songTitle: "",
           artistName: "",
           genre:"",
-          isrc: "",
+          isrc: ""
         }
-        */
     });
   }
 
   render() {
-    //const []
-
     return (
       <form className="container-fluid" onSubmit={this.handleFormSubmit}>
         <Select
@@ -555,32 +148,22 @@ class IngestionTool extends Component {
           handleChange={this.handleInput}
         />{" "}
         {/* Name of the partner organization */}
-        <Select
-          title={"Parental Warning Type"}
-          name={"parentalWarningType"}
-          options={this.state.parentalWarningTypeOptions}
-          value={this.state.MessageDetails.parentalWarningType}
-          placeholder={"Select Parental Warning Type"}
-          handleChange={this.handleInput}
+        <Input
+          inputType={"date"}
+          name={"releaseDate"}
+          title={"Release Date"}
+          value={this.state.MessageDetails.releaseDate}
+          placeholder={"Enter the release date"}
+          handleChange={this.handleReleaseDate}
         />{" "}
-        {/* Name of the partner organization */}
-        <Select
-          title={"Release Type"}
-          name={"releaseType"}
-          options={this.state.releaseTypeOptions}
-          value={this.state.MessageDetails.releaseType}
-          placeholder={"Select Release Type"}
-          handleChange={this.handleInput}
-          //handleChange={setReleaseType(value... )}
-        />{" "}
-        {/* Name of the partner organization */}
+        {/* Release Date */}
         <Row>
           <Col xs="6">
             <Input
               inputType={"text"}
               title={"Song Title"}
-              name={"releaseTitleText"}
-              value={this.state.MessageDetails.releaseTitleText}
+              name={"songTitle"}
+              value={this.state.MessageDetails.songTitle}
               placeholder={"Enter the song title"}
               handleChange={this.handleInput}
             />{" "}
@@ -590,8 +173,8 @@ class IngestionTool extends Component {
           <Input
             inputType={"text"}
             title={"Artist Name"}
-            name={"titleTextArtistName"}
-            value={this.state.MessageDetails.titleTextArtistName}
+            name={"artistName"}
+            value={this.state.MessageDetails.artistName}
             placeholder={"Enter the artist name"}
             handleChange={this.handleInput}
           />{" "}
