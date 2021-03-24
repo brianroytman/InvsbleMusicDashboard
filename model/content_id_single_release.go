@@ -4,7 +4,7 @@ import (
 	"time"
 )
 
-type Single struct {
+type ContentIdSingle struct {
 	ParterName  string
 	ReleaseDate time.Time
 	SingleTitle string
@@ -13,20 +13,4 @@ type Single struct {
   Publisher   string
   PublishingYear time.Year
   CustomID    string
-  //CreatedAt   time.Time
-  //UpdatedAt   time.Time
-  //TagList     []string
-	//FavoritedBy []User
-	//Author      User
-	//Comments    []Comment
 }
-
-/*
-type Comment struct {
-	ID        int
-	CreatedAt time.Time
-	UpdatedAt time.Time
-	Body      string
-	Author    User
-}
-*/

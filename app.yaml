@@ -13,15 +13,10 @@ handlers:
   script: auto
 
 - url: /static
-  static_dir: frontend-light-bootstrap-dashboard-react/build/static/
+  static_dir: nodejs-frontend-react-dashboard/build/static/
 
 - url: /uploadLive
   script: auto
 
 - url: /downloadLive
   script: auto
-
-
-
-
-
