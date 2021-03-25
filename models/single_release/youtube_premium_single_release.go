@@ -9,9 +9,9 @@ type YoutubePremiumSingle struct {
 	ReleaseDate time.Time
 	SingleTitle string
 	Genre       string
-  UPC         int
-  Publisher   string
-  PublishingYear time.Time
-  CustomID    string
-  RightsController string
+	UPC         int
+	Publisher   string
+	PublishingYear time.Time
+	CustomID    string
+	RightsController string
 }
