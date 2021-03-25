@@ -1,9 +1,9 @@
-<NewReleaseMessage>
+<NewReleaseMessageTest>
 	<MessageHeader>
 		<MessageId></MessageId>
 		<MessageSender>
 			<PartyId></PartyId>
-			<PartnerName>300 Entertainment</PartnerName>
+			<PartnerName>The Royt Sound</PartnerName>
 			<PartyName>
 				<FullName></FullName>
 			</PartyName>
@@ -14,8 +14,8 @@
 		<MessageCreatedDateTime></MessageCreatedDateTime>
 		<MessageControlType></MessageControlType>
 		<MessageDetails>
-			<ReleaseDate>2020-09-30</ReleaseDate>
-			<SongTitle>New Song</SongTitle>
+			<ReleaseDate>2021-03-30</ReleaseDate>
+			<SongTitle>Needed Me</SongTitle>
 			<ArtistName>Royt</ArtistName>
 		</MessageDetails>
 	</MessageHeader>
@@ -68,9 +68,9 @@
 	<ReleaseList>
 		<Release>
 			<ReleaseId>
-				<ISRC>12345654321QRS</ISRC>
+				<ISRC>123456QWERTY</ISRC>
 			</ReleaseId>
 		</Release>
 	</ReleaseList>
 	<DealList></DealList>
-</NewReleaseMessage>
+</NewReleaseMessageTest>

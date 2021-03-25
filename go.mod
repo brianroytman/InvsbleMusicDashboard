@@ -1,10 +1,5 @@
-module github.com/TutorialEdge/realtime-chat-go-react
+module InvsbleMusicDashboard
 
-go 1.13
+go 1.15
 
-require (
-	github.com/Jeffail/gabs v1.4.0 // indirect
-	github.com/gin-gonic/gin v1.6.3 // indirect
-	github.com/golang/gddo v0.0.0-20200611223618-a4829ef13274 // indirect
-	github.com/gorilla/mux v1.7.4
-)
+require github.com/gorilla/mux v1.8.0

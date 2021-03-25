@@ -13,10 +13,10 @@ handlers:
   script: auto
 
 - url: /static
-  static_dir: nodejs-frontend-react-dashboard/build/static/
+  static_dir: frontend-react-dashboard/build/static/
 
-- url: /uploadLive
+- url: /uploadReleaseContent
   script: auto
 
-- url: /downloadLive
+- url: /downloadYouTubeIngestionXML
   script: auto

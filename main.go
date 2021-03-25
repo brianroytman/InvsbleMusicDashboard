@@ -11,7 +11,8 @@ import (
 	"bytes"
 	"time"
 
-	"github.com/gorilla/mux"
+	"InvsbleMusicDashboard/routers"
+	//"github.com/gorilla/mux"
 )
 
 
@@ -84,7 +85,7 @@ type NewReleaseMessage struct {
 
 
 /*
-type NewReleaseMessage struct {
+type NewReleaseMessageOld struct {
     MessageId               string          `xml:"MessageHeader>MessageId"`
     SenderPartyId           string          `xml:"MessageHeader>MessageSender>PartyId"`
     FullName                string          `xml:"MessageHeader>MessageSender>PartyName>FullName"`
@@ -164,6 +165,7 @@ func LiveUploadReleaseContent(w http.ResponseWriter, r *http.Request) {
 
 }
 
+/*
 func handleRequests() {
 	fmt.Println("About to create Mux router")
 	router := mux.NewRouter().StrictSlash(true)
@@ -172,16 +174,22 @@ func handleRequests() {
 	router.HandleFunc("/uploadLive", LiveUploadReleaseContent).Methods("POST")
 	router.HandleFunc("/downloadLive", LiveDownloadReleaseContent).Methods("GET")
 
-	router.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir("./nodejs-frontend-react-dashboard/build/static/"))))
+	router.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir("./frontend-react-dashboard/build/static/"))))
 
 	router.PathPrefix("/").HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		http.ServeFile(w, r, "./nodejs-frontend-react-dashboard/build/index.html")
+		http.ServeFile(w, r, "./frontend-react-dashboard/build/index.html")
 	})
 
 	log.Fatal(http.ListenAndServe(":8080", router))
 }
+*/
 
 func main() {
-	fmt.Println("Youtube Ingestion Dashboard Application")
-	handleRequests()
+	fmt.Println("Youtube XML Ingestion Dashboard Application")
+	//handleRequests()
+
+	r := routers.Router()
+	fmt.Println("Starting server on the port 8080...")
+
+	log.Fatal(http.ListenAndServe(":8080", r))
 }
