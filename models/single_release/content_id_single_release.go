@@ -9,8 +9,8 @@ type ContentIdSingle struct {
 	ReleaseDate time.Time
 	SingleTitle string
 	Genre       string
-  UPC         int
-  Publisher   string
-  PublishingYear time.Time
-  CustomID    string
+	UPC         int
+	Publisher   string
+	PublishingYear time.Time
+	CustomID    string
 }
