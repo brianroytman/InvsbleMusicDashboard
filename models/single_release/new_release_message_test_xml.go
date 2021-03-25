@@ -40,19 +40,19 @@ type NewReleaseMessageTest struct {
 						TitleType string `xml:"TitleType,attr"`
 						TitleText string `xml:"TitleText"`
 					} `xml:"ResourceList>SoundRecording>SoundRecordingDetailsByTerritory>Title"`
-  //TitleText                           string `xml:"ResourceList>SoundRecording>SoundRecordingDetailsByTerritory>Title" TitleType='DisplayTitle'">TitleText"`
-  DisplayArtistFullName               string `xml:"ResourceList>SoundRecording>SoundRecordingDetailsByTerritory>DisplayArtist>PartyName>FullName"`
-  ArtistRole                          string `xml:"ResourceList>SoundRecording>SoundRecordingDetailsByTerritory>DisplayArtist>ArtistRole"`
-  LabelName                           string `xml:"ResourceList>SoundRecording>SoundRecordingDetailsByTerritory>LabelName"`
-  RightsControllerFullName            string `xml:"ResourceList>SoundRecording>SoundRecordingDetailsByTerritory>RightsController>PartyName>FullName"`
-  RightsControllerPartyId             string `xml:"ResourceList>SoundRecording>SoundRecordingDetailsByTerritory>RightsController>PartyId"`
-  RightsControllerRole                string `xml:"ResourceList>SoundRecording>SoundRecordingDetailsByTerritory>RightsController>RightsControllerRole"`
-  RightSharePercentage                string `xml:"ResourceList>SoundRecording>SoundRecordingDetailsByTerritory>RightsController>RightSharePercentage"`
-  PLineYear                           string `xml:"ResourceList>SoundRecording>SoundRecordingDetailsByTerritory>PLine>Year"`
-  PLineText                           string `xml:"ResourceList>SoundRecording>SoundRecordingDetailsByTerritory>PLine>PLineText"`
+	//TitleText                           string `xml:"ResourceList>SoundRecording>SoundRecordingDetailsByTerritory>Title" TitleType='DisplayTitle'">TitleText"`
+	DisplayArtistFullName               string `xml:"ResourceList>SoundRecording>SoundRecordingDetailsByTerritory>DisplayArtist>PartyName>FullName"`
+	ArtistRole                          string `xml:"ResourceList>SoundRecording>SoundRecordingDetailsByTerritory>DisplayArtist>ArtistRole"`
+	LabelName                           string `xml:"ResourceList>SoundRecording>SoundRecordingDetailsByTerritory>LabelName"`
+	RightsControllerFullName            string `xml:"ResourceList>SoundRecording>SoundRecordingDetailsByTerritory>RightsController>PartyName>FullName"`
+	RightsControllerPartyId             string `xml:"ResourceList>SoundRecording>SoundRecordingDetailsByTerritory>RightsController>PartyId"`
+	RightsControllerRole                string `xml:"ResourceList>SoundRecording>SoundRecordingDetailsByTerritory>RightsController>RightsControllerRole"`
+	RightSharePercentage                string `xml:"ResourceList>SoundRecording>SoundRecordingDetailsByTerritory>RightsController>RightSharePercentage"`
+	PLineYear                           string `xml:"ResourceList>SoundRecording>SoundRecordingDetailsByTerritory>PLine>Year"`
+	PLineText                           string `xml:"ResourceList>SoundRecording>SoundRecordingDetailsByTerritory>PLine>PLineText"`
 	Genre                               string `xml:"ResourceList>SoundRecording>SoundRecordingDetailsByTerritory>Genre>GenreText"`
 	ParentalExplicitWarning             string `xml:"ResourceList>SoundRecording>SoundRecordingDetailsByTerritory>ParentalWarningType"`
 	TechnicalResourceDetailsReference   string `xml:"ResourceList>SoundRecording>SoundRecordingDetailsByTerritory>TechnicalSoundRecordingDetails>TechnicalSoundRecordingDetailsReference"`
 	Isrc                                string `xml:"ReleaseList>Release>ReleaseId>ISRC"`
-  DealList                            string `xml:"DealList"`
+  	DealList                            string `xml:"DealList"`
 }
