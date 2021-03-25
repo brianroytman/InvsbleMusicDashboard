@@ -11,7 +11,7 @@ import (
 	"bytes"
 	"time"
 
-	"InvsbleMusicDashboard/routers"
+	"InvsbleMusicDashboard/routes"
 	//"github.com/gorilla/mux"
 )
 
@@ -188,7 +188,7 @@ func main() {
 	fmt.Println("Youtube XML Ingestion Dashboard Application")
 	//handleRequests()
 
-	r := routers.Router()
+	r := routes.Router()
 	fmt.Println("Starting server on the port 8080...")
 
 	log.Fatal(http.ListenAndServe(":8080", r))
