@@ -11,7 +11,8 @@ import (
 	"bytes"
 	"time"
 
-	"github.com/gorilla/mux"
+	"InvsbleMusicDashboard/routers"
+	//"github.com/gorilla/mux"
 )
 
 
@@ -84,7 +85,7 @@ type NewReleaseMessage struct {
 
 
 /*
-type NewReleaseMessage struct {
+type NewReleaseMessageOld struct {
     MessageId               string          `xml:"MessageHeader>MessageId"`
     SenderPartyId           string          `xml:"MessageHeader>MessageSender>PartyId"`
     FullName                string          `xml:"MessageHeader>MessageSender>PartyName>FullName"`
@@ -164,6 +165,7 @@ func LiveUploadReleaseContent(w http.ResponseWriter, r *http.Request) {
 
 }
 
+/*
 func handleRequests() {
 	fmt.Println("About to create Mux router")
 	router := mux.NewRouter().StrictSlash(true)
@@ -180,8 +182,14 @@ func handleRequests() {
 
 	log.Fatal(http.ListenAndServe(":8080", router))
 }
+*/
 
 func main() {
 	fmt.Println("Youtube XML Ingestion Dashboard Application")
-	handleRequests()
+	//handleRequests()
+
+	r := routers.Router()
+	fmt.Println("Starting server on the port 8080...")
+
+	log.Fatal(http.ListenAndServe(":8080", r))
 }

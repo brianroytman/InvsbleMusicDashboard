@@ -3,12 +3,14 @@ package middleware
 import (
 	"encoding/json" // package to encode and decode the json into struct and vice versa
 	"fmt"
-	"InvsbleMusicDashboard/models" // models package where User schema is defined
+	"InvsbleMusicDashboard/models/single_release"
+	//"InvsbleMusicDashboard/models" // models package where User schema is defined
 	"log"
 	"net/http" // used to access the request and response object of the api
-	"os"       // used to read the environment variable
-	"strconv"  // package used to covert string into int type
-	"github.com/gorilla/mux" // used to get the params from the route
+	"encoding/xml"
+	"time"
+	"bytes"
+	"io/ioutil"
   )
 
 	func DownloadYouTubeIngestionXML(w http.ResponseWriter, r *http.Request) {
@@ -32,14 +34,14 @@ import (
 		}
 		log.Println(string(body))
 
-		var sJ SingleJSON
+		var sJ models.SingleJSON
 		err = json.Unmarshal(body, &sJ)
 		if err != nil {
 			panic(err)
 		}
 		log.Println(string(sJ.SongTitle))
 
-		var sX NewReleaseMessage
+		var sX models.NewReleaseMessageTest
 		json.Unmarshal(body, &sX)
 		xmlOut, _ := xml.MarshalIndent(sX, "", "\t")
 		modtime := time.Now()

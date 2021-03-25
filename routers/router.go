@@ -3,6 +3,9 @@ package routers
 import (
     "InvsbleMusicDashboard/middleware"
     "github.com/gorilla/mux"
+    "fmt"
+  	"log"
+  	"net/http"
 )
 
 // Router is exported and used in main.go

@@ -98,7 +98,7 @@ class IngestionTool extends Component {
     e.preventDefault();
     let releaseData = this.state.MessageDetails;
 
-    fetch("/uploadLive", {
+    fetch("/uploadReleaseContent", {
       method: "POST",
       //mode: "no-cors",
       body: JSON.stringify(releaseData),

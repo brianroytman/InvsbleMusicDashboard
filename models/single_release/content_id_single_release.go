@@ -11,6 +11,6 @@ type ContentIdSingle struct {
 	Genre       string
   UPC         int
   Publisher   string
-  PublishingYear time.Year
+  PublishingYear time.Time
   CustomID    string
 }

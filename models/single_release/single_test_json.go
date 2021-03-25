@@ -1,9 +1,5 @@
 package models
 
-import (
-	"time"
-)
-
 type SingleJSON struct {
 	PartnerName string `json:"PartnerName,omitempty"`
 	ReleaseDate string `json:"ReleaseDate,omitempty"`

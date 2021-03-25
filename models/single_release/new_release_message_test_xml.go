@@ -1,9 +1,5 @@
 package models
 
-import (
-	"time"
-)
-
 type NewReleaseMessageTest struct {
 	MessageId                           string `xml:"MessageHeader>MessageId"`
 	SenderPartyId                       string `xml:"MessageHeader>MessageSender>PartyId"`
