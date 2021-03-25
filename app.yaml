@@ -13,7 +13,7 @@ handlers:
   script: auto
 
 - url: /static
-  static_dir: nodejs-frontend-react-dashboard/build/static/
+  static_dir: frontend-react-dashboard/build/static/
 
 - url: /uploadLive
   script: auto

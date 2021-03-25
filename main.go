@@ -172,16 +172,16 @@ func handleRequests() {
 	router.HandleFunc("/uploadLive", LiveUploadReleaseContent).Methods("POST")
 	router.HandleFunc("/downloadLive", LiveDownloadReleaseContent).Methods("GET")
 
-	router.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir("./nodejs-frontend-react-dashboard/build/static/"))))
+	router.PathPrefix("/static/").Handler(http.StripPrefix("/static/", http.FileServer(http.Dir("./frontend-react-dashboard/build/static/"))))
 
 	router.PathPrefix("/").HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		http.ServeFile(w, r, "./nodejs-frontend-react-dashboard/build/index.html")
+		http.ServeFile(w, r, "./frontend-react-dashboard/build/index.html")
 	})
 
 	log.Fatal(http.ListenAndServe(":8080", router))
 }
 
 func main() {
-	fmt.Println("Youtube Ingestion Dashboard Application")
+	fmt.Println("Youtube XML Ingestion Dashboard Application")
 	handleRequests()
 }
